@@ -16,4 +16,8 @@ void main() {
     expect(calc.add('1,2'), 3);
     expect(calc.add('1,2,3,4'), 10);
   });
+
+  test('Step 4: Newlines between numbers are allowed', () {
+    expect(calc.add('1\n2,3'), 6);
+  });
 }

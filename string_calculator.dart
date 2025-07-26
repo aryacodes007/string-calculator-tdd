@@ -5,6 +5,9 @@ class StringCalculator {
       return 0;
     }
 
+    // Step 4: Handle newline as delimiter
+    numbers = numbers.replaceAll('\n', ',');
+
     // Step 2/3: Handle any amount of comma-separated numbers
     final parts = numbers.split(',');
     final values = parts.map(int.parse).toList();
