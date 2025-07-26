@@ -5,6 +5,10 @@ class StringCalculator {
       return 0;
     }
 
-    return 1; // placeholder
+    // Step 2: Support single or two numbers
+    final parts = numbers.split(',');
+    final values = parts.map(int.parse).toList();
+
+    return values.fold(0, (a, b) => a + b);
   }
 }

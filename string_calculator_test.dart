@@ -8,4 +8,8 @@ void main() {
     expect(calc.add(''), 0);
   });
 
+  test('Step 2: Single number returns the same number', () {
+    expect(calc.add('5'), 5);
+  });
+
 }
