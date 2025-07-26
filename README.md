@@ -10,3 +10,4 @@ This is a Dart implementation of the String Calculator Kata using full TDD (Test
 4. Allow newlines as delimiters
 5. Allow custom single-character delimiters
 6. Throw exception for negative numbers (with list)
+7. Ignore numbers greater than 1000

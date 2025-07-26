@@ -20,7 +20,11 @@ class StringCalculator {
 
     // Step 2/3: Handle any amount of comma-separated numbers
     final parts = numbers.split(',');
-    final values = parts.map(int.parse).toList();
+    final values = parts
+        .where((p) => p.isNotEmpty)
+        .map(int.parse)
+        .where((n) => n <= 1000) // Step 7: Ignore numbers > 1000
+        .toList();
 
     // Step 6: Throw an exception if any negative numbers
     final negatives = values.where((n) => n < 0).toList();

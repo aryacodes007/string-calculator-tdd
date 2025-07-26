@@ -28,4 +28,9 @@ void main() {
   test('Step 6: Negative numbers throw exception', () {
     expect(() => calc.add('1,-2,3,-4'), throwsException);
   });
+
+  test('Step 7: Ignore numbers greater than 1000', () {
+    expect(calc.add('2,1001'), 2);
+    expect(calc.add('1000,1'), 1001);
+  });
 }
