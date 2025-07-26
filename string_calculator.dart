@@ -21,6 +21,7 @@ class StringCalculator {
           }
         }
       } else {
+        // Step 5: Handle single-character custom delimiter
         final match = RegExp(r'^//(.)\n').firstMatch(numbers);
         if (match != null) {
           final delimiter = match.group(1)!;

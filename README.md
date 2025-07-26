@@ -13,3 +13,19 @@ This is a Dart implementation of the String Calculator Kata using full TDD (Test
 7. Ignore numbers greater than 1000
 8. Allow custom delimiters of any length (e.g., `//[***]`)
 9. Support multiple custom delimiters (e.g., `//[*][%]`, `//[***][%%]`)
+
+## ▶️ How to Run
+
+Install Dart & run tests using:
+
+```bash
+dart pub add test
+dart run string_calculator_test.dart
+```
+
+## 📂 File Structure
+
+- `string_calculator.dart` – The main implementation
+- `string_calculator_test.dart` – TDD tests using `package:test`
+
+## ✅ Completed as part of Incubyte TDD Assessment
