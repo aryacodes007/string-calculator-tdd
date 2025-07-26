@@ -33,4 +33,8 @@ void main() {
     expect(calc.add('2,1001'), 2);
     expect(calc.add('1000,1'), 1001);
   });
+
+  test('Step 8: Delimiters can be of any length', () {
+    expect(calc.add('//[***]\n1***2***3'), 6);
+  });
 }
