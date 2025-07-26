@@ -5,13 +5,28 @@ class StringCalculator {
       return 0;
     }
 
-    // Step 5: Handle single-character custom delimiter
+    // Step 5/8/9: Handle custom delimiters of any length or multiple delimiters
     if (numbers.startsWith('//')) {
-      final match = RegExp(r'^//(.)\n').firstMatch(numbers);
-      if (match != null) {
-        final delimiter = match.group(1)!;
-        numbers = numbers.substring(match.end);
-        numbers = numbers.replaceAll(delimiter, ',');
+      if (numbers.startsWith('//[')) {
+        // Step 8/9: Support custom delimiters of any length and multiple delimiters
+        final headerMatch = RegExp(r'^//(\[.*?\])+\n').firstMatch(numbers);
+        if (headerMatch != null) {
+          final delimiters = RegExp(r'\[(.*?)\]')
+              .allMatches(headerMatch.group(0)!)
+              .map((m) => RegExp(RegExp.escape(m.group(1)!)));
+
+          numbers = numbers.substring(headerMatch.end);
+          for (final d in delimiters) {
+            numbers = numbers.replaceAll(d, ',');
+          }
+        }
+      } else {
+        final match = RegExp(r'^//(.)\n').firstMatch(numbers);
+        if (match != null) {
+          final delimiter = match.group(1)!;
+          numbers = numbers.substring(match.end);
+          numbers = numbers.replaceAll(delimiter, ',');
+        }
       }
     }
 

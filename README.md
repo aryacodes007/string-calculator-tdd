@@ -11,3 +11,5 @@ This is a Dart implementation of the String Calculator Kata using full TDD (Test
 5. Allow custom single-character delimiters
 6. Throw exception for negative numbers (with list)
 7. Ignore numbers greater than 1000
+8. Allow custom delimiters of any length (e.g., `//[***]`)
+9. Support multiple custom delimiters (e.g., `//[*][%]`, `//[***][%%]`)
