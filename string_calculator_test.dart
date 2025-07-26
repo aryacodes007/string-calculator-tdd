@@ -24,4 +24,8 @@ void main() {
   test('Step 5: Custom single-character delimiter', () {
     expect(calc.add('//;\n1;2'), 3);
   });
+
+  test('Step 6: Negative numbers throw exception', () {
+    expect(() => calc.add('1,-2,3,-4'), throwsException);
+  });
 }

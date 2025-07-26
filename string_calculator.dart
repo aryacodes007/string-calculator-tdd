@@ -22,6 +22,12 @@ class StringCalculator {
     final parts = numbers.split(',');
     final values = parts.map(int.parse).toList();
 
+    // Step 6: Throw an exception if any negative numbers
+    final negatives = values.where((n) => n < 0).toList();
+    if (negatives.isNotEmpty) {
+      throw Exception('negatives not allowed: ${negatives.join(',')}');
+    }
+
     return values.fold(0, (a, b) => a + b);
   }
 }

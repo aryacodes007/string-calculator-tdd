@@ -9,3 +9,4 @@ This is a Dart implementation of the String Calculator Kata using full TDD (Test
 3. Return the sum of comma-separated numbers
 4. Allow newlines as delimiters
 5. Allow custom single-character delimiters
+6. Throw exception for negative numbers (with list)
