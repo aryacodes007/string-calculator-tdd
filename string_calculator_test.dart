@@ -12,4 +12,8 @@ void main() {
     expect(calc.add('5'), 5);
   });
 
+  test('Step 3: Sum of two or more comma-separated numbers', () {
+    expect(calc.add('1,2'), 3);
+    expect(calc.add('1,2,3,4'), 10);
+  });
 }

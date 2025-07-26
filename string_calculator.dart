@@ -5,7 +5,7 @@ class StringCalculator {
       return 0;
     }
 
-    // Step 2: Support single or two numbers
+    // Step 2/3: Handle any amount of comma-separated numbers
     final parts = numbers.split(',');
     final values = parts.map(int.parse).toList();
 
